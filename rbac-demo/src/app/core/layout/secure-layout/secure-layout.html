@@ -1,0 +1,13 @@
+<header class="nav">
+  <a routerLink="/app/dashboard">Dashboard</a>
+  <a routerLink="/app/profile">Profile</a>
+  <a routerLink="/app/admin" *hasRole="['Admin','SuperAdmin']">Admin</a>
+  <a routerLink="/app/super" *hasRole="'SuperAdmin'">SuperAdmin</a>
+  <span class="spacer"></span>
+  <span class="badge">Role: {{ role() }}</span>
+  <button (click)="logout()">Logout</button>
+</header>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>

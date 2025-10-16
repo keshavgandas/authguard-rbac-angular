@@ -1,0 +1,16 @@
+<header class="nav">
+  <a routerLink="/public">Home</a>
+  <span class="spacer"></span>
+
+  <ng-container *ngIf="!isLoggedIn(); else logged">
+    <a routerLink="/public/login"><button>Login</button></a>
+  </ng-container>
+  <ng-template #logged>
+    <button (click)="goToApp()">Go to App</button>
+    <button (click)="logout()">Logout</button>
+  </ng-template>
+</header>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
